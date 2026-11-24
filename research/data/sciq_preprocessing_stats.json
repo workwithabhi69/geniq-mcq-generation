@@ -1,0 +1,46 @@
+{
+  "dataset_name": "allenai/sciq",
+  "license": "CC BY-NC 3.0",
+  "citation": "Welbl, Liu and Gardner (2017) - Crowdsourcing Multiple Choice Science Questions",
+  "raw_counts": {
+    "train": 11679,
+    "validation": 1000,
+    "test": 1000
+  },
+  "filtered_counts": {
+    "train": 10481,
+    "validation": 887,
+    "test": 884
+  },
+  "removed_empty_support": {
+    "train": 1198,
+    "validation": 113,
+    "test": 116
+  },
+  "text_statistics": {
+    "train": {
+      "avg_support_words": 75.86890563877492,
+      "avg_question_words": 12.99379830168877,
+      "min_support_words": 3,
+      "max_support_words": 560
+    },
+    "validation": {
+      "avg_support_words": 75.40924464487036,
+      "avg_question_words": 13.401352874859075,
+      "min_support_words": 6,
+      "max_support_words": 449
+    },
+    "test": {
+      "avg_support_words": 77.90723981900453,
+      "avg_question_words": 13.127828054298643,
+      "min_support_words": 7,
+      "max_support_words": 463
+    }
+  },
+  "benchmark_sample": {
+    "size": 200,
+    "seed": 42,
+    "saved_csv": "C:/Users/ag634/.gemini/antigravity/scratch/geniq/research/data\\sciq_test_benchmark_200.csv",
+    "saved_jsonl": "C:/Users/ag634/.gemini/antigravity/scratch/geniq/research/data\\sciq_test_benchmark_200.jsonl"
+  }
+}
