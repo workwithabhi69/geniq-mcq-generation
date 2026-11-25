@@ -212,7 +212,7 @@ Open `http://localhost:5173` in your browser.
 
 ## 8. ESE Deliverables & Documentation Index
 - **Executable Colab Notebook:** [`research/MCQ_Generation_Research_Experiments.ipynb`](file:///C:/Users/ag634/.gemini/antigravity/scratch/geniq/research/MCQ_Generation_Research_Experiments.ipynb)
-- **Presentation Slides Outline:** [`docs/presentation_slides.md`](file:///C:/Users/ag634/.gemini/antigravity/scratch/geniq/docs/presentation_slides.md)
+- **Master 5-CO Examination Rubric Guide:** [`docs/rubric_all_5_cos.md`](file:///C:/Users/ag634/.gemini/antigravity/scratch/geniq/docs/rubric_all_5_cos.md)
 - **System Architecture Document:** [`docs/architecture.md`](file:///C:/Users/ag634/.gemini/antigravity/scratch/geniq/docs/architecture.md)
 - **Academic Research Methodology:** [`docs/methodology.md`](file:///C:/Users/ag634/.gemini/antigravity/scratch/geniq/docs/methodology.md)
 - **Quantitative Evaluation Formulas:** [`docs/evaluation.md`](file:///C:/Users/ag634/.gemini/antigravity/scratch/geniq/docs/evaluation.md)
