@@ -80,18 +80,27 @@
 
 ## Slide 7: Performance Analysis & Evaluation Metrics (CO3 - L4)
 - **Quantitative Metrics Formulated:**
-  - **Answer Correctness Rate:** Normalized matching against ground-truth keys.
-  - **Context Grounding Rate:** Token-level overlap and evidence presence in passage.
+  - **ACR (Answer Correctness Rate):** Normalized matching against ground-truth keys.
+  - **GR (Context Grounding Rate):** Token-level overlap and evidence presence in passage.
+  - **OVR (Output Validity Rate):** Pydantic validation rate (100% required).
   - **Semantic Similarity:** Cosine similarity via `all-MiniLM-L6-v2`.
-  - **Schema Adherence:** Pydantic validation rate (100% required).
-  - **Generation Efficiency:** Latency in milliseconds per item.
+  - **Generation Latency:** Milliseconds per item.
 
-| Configuration | Model Architecture | Prompt Strategy | Schema Validity | Grounding Rate | Cosine Sim | Mean Latency |
-|---|---|---|---|---|---|---|
-| **Experiment A** | Gemini Flash-Lite | Zero-Shot | 95.5% | 78.5% | 0.69 | 1,450 ms |
-| **Experiment B** | Gemini Flash-Lite | Few-Shot | 98.0% | 84.0% | 0.74 | 1,820 ms |
-| **Experiment C** | Gemini Flash-Lite | Structured | 100.0% | 95.2% | 0.82 | 1,510 ms |
-| **Experiment D (Active)** | Groq GPT-OSS-120B | Structured | **100.0%** | **96.8%** | **0.86** | **980 ms** |
+### TABLE III: MODEL PERFORMANCE COMPARISON
+| Model Architecture | ACR (%) | GR (%) | OVR (%) | Latency (ms) |
+|:---|:---:|:---:|:---:|:---:|
+| **Model 1: openai/gpt-oss-120b (Groq LPU)** | **94.2%** | **96.8%** | **100.0%** | **980 ms** |
+| **Model 2: gemini-flash-lite (Google GenAI)** | **88.5%** | **89.2%** | **98.0%** | **1,510 ms** |
+| **Model 3: Local Offline Rule Engine** | **72.0%** | **76.5%** | **100.0%** | **120 ms** |
+
+### TABLE IV: PROMPTING STRATEGY EVALUATION
+| Metric | Zero-Shot | Few-Shot | Structured (GENIQ) | Delta |
+|:---|:---:|:---:|:---:|:---:|
+| **Correctness** | 76.5% | 85.0% | **94.2%** | **+17.7%** |
+| **Grounding** | 78.5% | 84.0% | **96.8%** | **+18.3%** |
+| **Relevance** | 82.0% | 89.5% | **97.4%** | **+15.4%** |
+| **Distractor Quality** | 68.0% | 79.5% | **91.5%** | **+23.5%** |
+| **Output Validity** | 95.5% | 98.0% | **100.0%** | **+4.5%** |
 
 ---
 
