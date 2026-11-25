@@ -49,6 +49,9 @@ Multiple Choice Questions (MCQs) are essential instruments for educational evalu
 
 ## 3. Technique & System Architecture (CO2 & CO5 - Level 3/6)
 
+### 3.1 System Overview
+**GENIQ** operates on a modular, decoupled 3-tier architecture designed for high-throughput, psychometrically validated question generation from educational text and PDF documents:
+
 ```text
 [ Educational Text / Textbook PDF ]
                  |
@@ -62,7 +65,7 @@ Multiple Choice Questions (MCQs) are essential instruments for educational evalu
                  |
                  v
    [ GenAI Model Inference ]
-   (Groq LPU openai/gpt-oss-120b + Google Gemini + Local NLP Engine)
+   (Groq LPU openai/gpt-oss-120b + Google Gemini + Local Fallback Engine)
                  |
                  v
    [ Pydantic Strict Validation ]
@@ -83,6 +86,13 @@ Multiple Choice Questions (MCQs) are essential instruments for educational evalu
   | - Formative Quiz Mode (Per-question & Final Review)   |
   +-------------------------------------------------------+
 ```
+
+### 3.2 Architectural Highlights
+1. **Presentation Tier:** Typography-first editorial creative-studio aesthetic (Inter, monochromatic palette, continuous marquee) built with React 18, Vite, TypeScript, and Tailwind CSS.
+2. **Document Processing:** PyMuPDF text stream extraction with header/footer normalization, page number removal, and sentence-boundary semantic chunking (~250 words with 40-word overlap).
+3. **Multi-Model Inference:** Primary inference powered by Groq LPU (`openai/gpt-oss-120b`) delivering sub-second question generation (~980ms), with Google Gemini API integration and an automated local offline fallback engine.
+4. **Data Integrity:** Strict Pydantic v2 schemas guaranteeing exactly 4 options (A, B, C, D), single correct answer keys, and verbatim source evidence quotes.
+5. **Persistence & Telemetry:** SQLite database via SQLAlchemy, paired with an interactive Analytics dashboard using Recharts for 6-axis psychometric radar profiles and latency histograms.
 
 ---
 
